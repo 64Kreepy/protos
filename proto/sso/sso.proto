@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package auth;
+
+option go_package = "zeze.sso;ssov1";
+
+service auth {
+    rpc login (loginRequest) returns (loginResponse);
+
+    rpc register (registerRequest) returns (registerResponse);
+
+    rpc isAdmin (isAdminRequest) returns (isAdminResponse);
+}
+
+message loginRequest {
+    string email = 1;
+    string password = 2;
+    int32 appId = 3;
+}
+
+message loginResponse {
+    string token = 1;
+}
+
+message registerRequest {
+    string email = 1 ;  // User email
+    string password = 2; // User password 
+    string passwordConfirm = 3; // User password confirmation 
+}
+
+message registerResponse {
+    int64 userId = 1;
+}
+
+message isAdminRequest {
+    int64 userId = 1;
+}
+
+message isAdminResponse {
+    bool isAdmin = 1;
+}
+
