@@ -135,9 +135,9 @@ type RegisterRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Email           string `protobuf:"bytes,1,opt,name=email,proto3" json:"email,omitempty"`
-	Password        string `protobuf:"bytes,2,opt,name=password,proto3" json:"password,omitempty"`
-	PasswordConfirm string `protobuf:"bytes,3,opt,name=passwordConfirm,proto3" json:"passwordConfirm,omitempty"`
+	Email           string `protobuf:"bytes,1,opt,name=email,proto3" json:"email,omitempty"`                     // User email
+	Password        string `protobuf:"bytes,2,opt,name=password,proto3" json:"password,omitempty"`               // User password
+	PasswordConfirm string `protobuf:"bytes,3,opt,name=passwordConfirm,proto3" json:"passwordConfirm,omitempty"` // User password confirmation
 }
 
 func (x *RegisterRequest) Reset() {
