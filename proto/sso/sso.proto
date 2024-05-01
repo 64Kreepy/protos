@@ -10,6 +10,8 @@ service auth {
     rpc register (registerRequest) returns (registerResponse);
 
     rpc isAdmin (isAdminRequest) returns (isAdminResponse);
+
+    rpc logOut (logOutRequest) returns (logOutResponse);
 }
 
 message loginRequest {
@@ -38,5 +40,13 @@ message isAdminRequest {
 
 message isAdminResponse {
     bool isAdmin = 1;
+}
+
+message logOutRequest {
+    bool logOut = 1;
+}
+
+message logOutResponse {
+    bool logOut = 1;
 }
 
